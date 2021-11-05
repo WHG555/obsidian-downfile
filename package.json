@@ -1,23 +1,61 @@
 {
-	"name": "obsidian-sample-plugin",
-	"version": "0.12.0",
-	"description": "This is a sample plugin for Obsidian (https://obsidian.md)",
-	"main": "main.js",
-	"scripts": {
-		"dev": "node esbuild.config.mjs",
-		"build": "node esbuild.config.mjs production"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "MIT",
-	"devDependencies": {
-		"@types/node": "^16.11.6",
-		"@typescript-eslint/eslint-plugin": "^5.2.0",
-		"@typescript-eslint/parser": "^5.2.0",
-		"builtin-modules": "^3.2.0",
-		"esbuild": "0.13.12",
-		"obsidian": "^0.12.17",
-		"tslib": "2.3.1",
-		"typescript": "4.4.4"
-	}
+  "name": "obsidian-downfile",
+  "version": "1.0.0",
+  "description": "插件、主题、css片段的管理与下载",
+  "main": "main.js",
+  "scripts": {
+    "dev": "rollup --config rollup.config.js -w",
+    "build": "cross-env NODE_OPTIONS='--no-deprecation' rollup --config rollup.config.js --environment BUILD:production",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "uphy",
+  "license": "MIT",
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^18.0.0",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^11.2.1",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@tsconfig/svelte": "^2.0.1",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^14.14.37",
+    "cross-env": "^7.0.3",
+    "jest": "^27.0.6",
+    "moment": "^2.29.1",
+    "obsidian": "^0.12.0",
+    "rollup": "^2.32.1",
+    "rollup-plugin-svelte": "^7.1.0",
+    "svelte-check": "^2.2.4",
+    "svelte-jester": "^2.0.1",
+    "svelte-preprocess": "^4.7.4",
+    "ts-jest": "^27.0.5",
+    "tslib": "^2.2.0",
+    "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "electron": "^13.1.8",
+    "markdown-it": "^12.2.0",
+    "svelte": "^3.42.1"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "moduleDirectories": [
+      "node_modules",
+      "src"
+    ],
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    },
+    "testMatch": [
+      "**/*.test.ts"
+    ]
+  }
 }

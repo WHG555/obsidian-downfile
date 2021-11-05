@@ -1,4 +1,7 @@
-/* Sets all the text color to red! */
-body {
-    color: red;
+/* styles.css */
+
+.modal {
+    width: 80vw;
+    height: 90vh;
+    padding: 0;
 }
